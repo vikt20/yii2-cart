@@ -132,7 +132,7 @@ class DatabaseStorage extends BaseObject implements StorageInterface
             $command->delete($this->table, [$this->idField => $identifier]);
         } else {
             $command->setSql("
-                REPLACE {{{$this->table}}}
+                REPLACE {$this->table}
                 SET
                     {{{$this->dataField}}} = :val,
                     {{{$this->idField}}} = :id
